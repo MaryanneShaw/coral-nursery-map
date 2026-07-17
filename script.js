@@ -16,6 +16,28 @@ map.on('load', () => {
         const properties = feature.properties;
 
         const popupContent = `
+    <div class="coral-popup">
+        <h3>${properties.Name || 'Coral Nursery Structure'}</h3>
+
+        <img
+            src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru.JPG"
+            alt="Guru coral table"
+            style="width:100%; max-width:280px; border-radius:8px; margin:8px 0;"
+        >
+
+        <p><strong>Site ID:</strong>
+        ${properties['Site ID'] || 'Not available'}</p>
+
+        <p><strong>Species:</strong>
+        ${properties.Species || 'Not available'}</p>
+
+        <p><strong>Structure Type:</strong>
+        ${properties['Structure Type'] || 'Not available'}</p>
+
+        <p><strong>Description:</strong>
+        ${properties.Description || 'Not available'}</p>
+    </div>
+`;
             <div class="coral-popup">
                 <h3>${properties.Name || 'Coral Nursery Structure'}</h3>
 
