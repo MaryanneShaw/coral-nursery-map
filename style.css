@@ -9,3 +9,24 @@ body {
     bottom: 0;
     width: 100%;
 }
+.photo-gallery {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin: 10px 0;
+    padding-bottom: 5px;
+}
+
+.photo-gallery img {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
