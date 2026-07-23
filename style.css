@@ -22,16 +22,36 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 18px 24px;
+    gap: 24px;
+    padding: 16px 24px;
     background: white;
     border-bottom: 1px solid #d9e6e7;
     flex-shrink: 0;
 }
 
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+}
+
+.site-logo {
+    width: 110px;
+    height: auto;
+    max-height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.header-text {
+    min-width: 0;
+}
+
 .site-header h1 {
     margin: 3px 0 6px;
     font-size: 28px;
+    line-height: 1.15;
 }
 
 .eyebrow {
@@ -45,6 +65,21 @@ body {
 .subtitle {
     margin: 0;
     color: #526f72;
+    line-height: 1.4;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.ozone-logo {
+    width: 85px;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
 }
 
 .prototype-badge {
@@ -56,11 +91,23 @@ body {
     white-space: nowrap;
 }
 
-.map-instructions {
-    padding: 10px 24px;
+.map-information {
+    padding: 9px 24px;
     background: #e8f2f2;
-    font-size: 14px;
+    border-bottom: 1px solid #d4e3e3;
     flex-shrink: 0;
+}
+
+.map-instructions {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.acknowledgement {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #5e7477;
 }
 
 #map {
@@ -120,15 +167,33 @@ body {
         padding: 14px 16px;
     }
 
-    .site-header h1 {
-        font-size: 23px;
+    .brand-section {
+        align-items: flex-start;
     }
 
-    .map-instructions {
-        padding: 9px 16px;
+    .site-logo {
+        width: 75px;
+        max-height: 55px;
+    }
+
+    .site-header h1 {
+        font-size: 22px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .ozone-logo {
+        width: 70px;
     }
 
     .prototype-badge {
         white-space: normal;
+    }
+
+    .map-information {
+        padding: 9px 16px;
     }
 }
