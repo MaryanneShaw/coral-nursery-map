@@ -11,33 +11,76 @@ map.addControl(new mapboxgl.NavigationControl());
 
 const coralLayerId = 'ce8293df4da79970abde';
 
+/*
+Photo galleries for each coral nursery point.
+
+The names on the left must match the names shown
+on the Mapbox map exactly.
+*/
+const coralPhotos = {
+    "Coral Table 1 - QURU": [
+        "images/Guru.JPG",
+        "images/Guru-2.jpg",
+        "images/Guru-3.jpg"
+    ],
+
+    "Coral Table 2 - ULAVI": [
+        "images/Ulavi.jpg",
+        "images/Ulavi-2.jpg",
+        "images/Ulavi-3.jpg"
+    ],
+
+    "A-Frames": [
+        "images/A-frame.jpg",
+        "images/A-frame-2.jpg",
+        "images/A-frame-3.jpg"
+    ],
+
+    "Coral Table 3 & 4 - IKA VUKA": [
+        "images/Ika Vuka.jpg",
+        "images/Ika Vuka-2.jpg",
+        "images/Ika Vuka-3.jpg"
+    ],
+
+    "Gene Bank": [
+        "images/Gene Bank.jpg",
+        "images/Gene Bank-2.jpg",
+        "images/Gene Bank-3.jpg",
+        "images/Gene Bank-4.jpg"
+    ]
+};
+
 map.on('load', () => {
     map.on('click', coralLayerId, (event) => {
         const feature = event.features[0];
         const properties = feature.properties;
+        const pointName = properties.Name || 'Coral Nursery Structure';
+
+        const photos = coralPhotos[pointName] || [];
+
+        const galleryHTML = photos.length > 0
+            ? `
+                <div class="photo-gallery">
+                    ${photos.map((photo, index) => `
+                        <img
+                            src="${photo}"
+                            alt="${pointName} photo ${index + 1}"
+                            loading="lazy"
+                        >
+                    `).join('')}
+                </div>
+            `
+            : `
+                <p class="no-photos">
+                    Photos will be added soon.
+                </p>
+            `;
 
         const popupContent = `
             <div class="coral-popup">
-                <h3>${properties.Name || 'Coral Nursery Structure'}</h3>
+                <h3>${pointName}</h3>
 
-               <div class="photo-gallery">
-
-    <img
-        src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru.JPG"
-        alt="Guru 1"
-    >
-
-    <img
-        src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru-2.jpg"
-        alt="Guru 2"
-    >
-
-    <img
-        src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru-3.jpg"
-        alt="Guru 3"
-    >
-
-</div>
+                ${galleryHTML}
 
                 <p>
                     <strong>Site ID:</strong>
@@ -64,7 +107,8 @@ map.on('load', () => {
         new mapboxgl.Popup({
             offset: 15,
             closeButton: true,
-            closeOnClick: true
+            closeOnClick: true,
+            maxWidth: '340px'
         })
             .setLngLat(event.lngLat)
             .setHTML(popupContent)
