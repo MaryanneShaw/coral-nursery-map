@@ -15,27 +15,35 @@
 
 <body>
 <header class="site-header">
-    <div class="header-text">
-        <p class="eyebrow">OUTRIGGER Fiji Beach Resort</p>
-        <h1>Interactive Coral Nursery Map</h1>
-        <p class="subtitle">
-            Explore the coral nursery structures and view photo galleries from the restoration site.
-        </p>
+    <div class="brand-section">
+        <img
+            src="images/outrigger-logo.png"
+            alt="OUTRIGGER Fiji Beach Resort logo"
+            class="site-logo"
+        >
+
+        <div class="header-text">
+            <p class="eyebrow">OUTRIGGER Fiji Beach Resort</p>
+
+            <h1>OUTRIGGER Fiji Beach Coral Nursery Explorer</h1>
+
+            <p class="subtitle">
+                Discover our coral restoration structures through an interactive map and photo galleries.
+            </p>
+        </div>
     </div>
 
     <span class="prototype-badge">Prototype – July 2026</span>
 </header>
 
-<div class="map-instructions">
-    Click on any coral structure to view its information and photo gallery.
-</div>
-    <div id="map"></div>
+<section class="map-information">
+    <p class="map-instructions">
+        Explore our coral nursery by selecting a structure on the map to view photos and information.
+    </p>
 
-    <!-- Mapbox JavaScript -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+    <p class="acknowledgement">
+        Developed by the Environment Team together with the 2026 Environmental Interns.
+    </p>
+</section>
 
-    <!-- Our JavaScript -->
-   <script src="script.js?v=2"></script>
-
-</body>
-</html>
+<div id="map"></div>
