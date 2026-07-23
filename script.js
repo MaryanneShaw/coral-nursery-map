@@ -20,11 +20,24 @@ map.on('load', () => {
             <div class="coral-popup">
                 <h3>${properties.Name || 'Coral Nursery Structure'}</h3>
 
-                <img
-                    src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru.JPG"
-                    alt="Guru coral table"
-                    style="width:100%; max-width:280px; border-radius:8px; margin:8px 0;"
-                >
+               <div class="photo-gallery">
+
+    <img
+        src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru.JPG"
+        alt="Guru 1"
+    >
+
+    <img
+        src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru-2.jpg"
+        alt="Guru 2"
+    >
+
+    <img
+        src="https://maryanneshaw.github.io/coral-nursery-map/images/Guru-3.jpg"
+        alt="Guru 3"
+    >
+
+</div>
 
                 <p>
                     <strong>Site ID:</strong>
