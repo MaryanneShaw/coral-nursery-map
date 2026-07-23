@@ -1,44 +1,21 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-}
-.photo-gallery {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    margin: 10px 0;
-    padding-bottom: 5px;
-}
-
-.photo-gallery img {
-    width: 180px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
-
-.photo-gallery img:hover {
-    transform: scale(1.05);
-}
 * {
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     background: #f4f8f8;
     color: #173b3f;
+    overflow: hidden;
 }
 
 .site-header {
@@ -49,6 +26,7 @@ body {
     padding: 18px 24px;
     background: white;
     border-bottom: 1px solid #d9e6e7;
+    flex-shrink: 0;
 }
 
 .site-header h1 {
@@ -82,25 +60,75 @@ body {
     padding: 10px 24px;
     background: #e8f2f2;
     font-size: 14px;
+    flex-shrink: 0;
 }
 
 #map {
     width: 100%;
-    height: 80vh;
+    flex: 1;
+    min-height: 0;
 }
+
+.photo-gallery {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin: 10px 0;
+    padding-bottom: 5px;
+}
+
+.photo-gallery img {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.mapboxgl-popup-content {
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.coral-popup h3 {
+    margin: 0 0 10px;
+}
+
+.coral-popup p {
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.no-photos {
+    padding: 10px;
+    background: #f1f5f5;
+    border-radius: 7px;
+    color: #667b7e;
+    font-style: italic;
 }
 
 @media (max-width: 650px) {
     .site-header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 14px 16px;
     }
 
     .site-header h1 {
         font-size: 23px;
     }
 
-    #map {
-        height: 70vh;
+    .map-instructions {
+        padding: 9px 16px;
+    }
+
+    .prototype-badge {
+        white-space: normal;
     }
 }
