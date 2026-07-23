@@ -86,8 +86,8 @@ body {
 
 #map {
     width: 100%;
-    height: calc(100vh - 139px);
-    min-height: 500px;
+    height: 80vh;
+}
 }
 
 @media (max-width: 650px) {
